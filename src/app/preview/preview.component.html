@@ -10,7 +10,8 @@
             <div class="col-md-12" *ngIf="parentIndex%2===0">
               <ng-container *ngFor="let head of currentState.HEADINGS;let childIndex = index ">
                 <div class="form-group col-md-4" *ngIf="(parentIndex+childIndex)<(parentIndex+2) && currentState.HEADINGS[parentIndex+childIndex]">
-                  <h1 class="form-control {{head.cssclassname}}">Heading</h1>
+                  <h1 class="{{head.cssclassname}}">Heading</h1>
+                  <hr/>
                 </div>
               </ng-container>
             </div>
@@ -24,8 +25,12 @@
             <div class="col-md-12" *ngIf="parentIndex%2===0">
               <ng-container *ngFor="let textbox of currentState.TEXTBOXES;let childIndex = index ">
                 <div class="form-group col-md-4" *ngIf="(parentIndex+childIndex)<(parentIndex+2) && currentState.TEXTBOXES[parentIndex+childIndex]">
+                  TextBox:
                   <input type="{{textbox.inputtype.type}}" class="form-control {{textbox.cssclassname}}">
+                  <hr/>
+
                 </div>
+
               </ng-container>
             </div>
           </ng-container>
@@ -38,7 +43,10 @@
             <div class="col-md-12" *ngIf="parentIndex%2===0">
               <ng-container *ngFor="let textarea of currentState.TEXTAREA;let childIndex = index ">
                 <div class="form-group col-md-4" *ngIf="(parentIndex+childIndex)<(parentIndex+2) && currentState.TEXTAREA[parentIndex+childIndex]">
+                  TextArea:
                   <textarea class="form-control {{textarea.cssclassname}}"></textarea>
+                  <hr/>
+
                 </div>
               </ng-container>
             </div>
