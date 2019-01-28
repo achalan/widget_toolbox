@@ -1,0 +1,50 @@
+<div id="page-wrapper">
+  <h2>Page Preview:</h2>
+  <br/>
+  <div>
+    <div class="wrapper" style="height:100%;width:100%">
+
+      <div class="row">
+        <div class="col-md-12">
+          <ng-container *ngFor="let item of currentState.HEADINGS;let parentIndex = index ">
+            <div class="col-md-12" *ngIf="parentIndex%2===0">
+              <ng-container *ngFor="let head of currentState.HEADINGS;let childIndex = index ">
+                <div class="form-group col-md-4" *ngIf="(parentIndex+childIndex)<(parentIndex+2) && currentState.HEADINGS[parentIndex+childIndex]">
+                  <h1 class="form-control {{head.cssclassname}}">Heading</h1>
+                </div>
+              </ng-container>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <ng-container *ngFor="let item of currentState.TEXTBOXES;let parentIndex = index ">
+            <div class="col-md-12" *ngIf="parentIndex%2===0">
+              <ng-container *ngFor="let textbox of currentState.TEXTBOXES;let childIndex = index ">
+                <div class="form-group col-md-4" *ngIf="(parentIndex+childIndex)<(parentIndex+2) && currentState.TEXTBOXES[parentIndex+childIndex]">
+                  <input type="{{textbox.inputtype.type}}" class="form-control {{textbox.cssclassname}}">
+                </div>
+              </ng-container>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <ng-container *ngFor="let item of currentState.TEXTAREA;let parentIndex = index ">
+            <div class="col-md-12" *ngIf="parentIndex%2===0">
+              <ng-container *ngFor="let textarea of currentState.TEXTAREA;let childIndex = index ">
+                <div class="form-group col-md-4" *ngIf="(parentIndex+childIndex)<(parentIndex+2) && currentState.TEXTAREA[parentIndex+childIndex]">
+                  <textarea class="form-control {{textarea.cssclassname}}"></textarea>
+                </div>
+              </ng-container>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
